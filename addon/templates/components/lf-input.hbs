@@ -11,70 +11,60 @@
       {{#if (eq addonPlacement 'before')}}
         {{yield}}
       {{/if}}
-      {{component inputComponent
-        id=id
-        value=property
-        update=(action "valueChanged")
-        placeholder=placeholder
-        type=type
-        disabled=disabled
-        readonly=readonly
-        autofocus=autofocus
-        accept=accept
-        autocomplete=autocomplete
-        capture=capture
-        height=height
-        width=width
-        inputmode=inputmode
-        list=list
-        max=max
-        maxlength=maxlength
-        min=min
-        minlength=minlength
-        multiple=multiple
-        pattern=pattern
-        selectionDirection=selectionDirection
-        selectionEnd=selectionEnd
-        selectionStart=selectionStart
-        spellcheck=spellcheck
-        step=step
-        tabindex=tabindex
-        class=(concat "form-control " inputClass)
-      }}
+      <input
+        id={{id}}
+        value={{property}}
+        oninput={{action "valueChanged" value="target.value"}}
+        placeholder={{placeholder}}
+        type={{type}}
+        disabled={{disabled}}
+        readonly={{readonly}}
+        autofocus={{autofocus}}
+        accept={{accept}}
+        autocomplete={{autocomplete}}
+        height={{height}}
+        width={{width}}
+        inputmode={{inputmode}}
+        list={{list}}
+        max={{max}}
+        maxlength={{maxlength}}
+        min={{min}}
+        minlength={{minlength}}
+        multiple={{multiple}}
+        pattern={{pattern}}
+        spellcheck={{spellcheck}}
+        step={{step}}
+        tabindex={{tabindex}}
+        class={{concat "form-control " inputClass}}>
       {{#if (eq addonPlacement 'after')}}
         {{yield}}
       {{/if}}
     </div>
   {{else}}
-      {{component inputComponent
-        id=id
-        value=property
-        update=(action "valueChanged")
-        placeholder=placeholder
-        type=type
-        disabled=disabled
-        readonly=readonly
-        autofocus=autofocus
-        accept=accept
-        autocomplete=autocomplete
-        capture=capture
-        height=height
-        width=width
-        inputmode=inputmode
-        list=list
-        max=max
-        maxlength=maxlength
-        min=min
-        minlength=minlength
-        multiple=multiple
-        pattern=pattern
-        selectionDirection=selectionDirection
-        selectionEnd=selectionEnd
-        selectionStart=selectionStart
-        spellcheck=spellcheck
-        step=step
-        tabindex=tabindex
-        class=(or inputClass "form-control")
-      }}
+      <input
+        id={{id}}
+        value={{property}}
+        oninput={{action "valueChanged" value="target.value"}}
+        placeholder={{placeholder}}
+        type={{type}}
+        disabled={{disabled}}
+        readonly={{readonly}}
+        autofocus={{autofocus}}
+        accept={{accept}}
+        autocomplete={{autocomplete}}
+        height={{height}}
+        width={{width}}
+        inputmode={{inputmode}}
+        list={{list}}
+        max={{max}}
+        maxlength={{maxlength}}
+        min={{min}}
+        minlength={{minlength}}
+        multiple={{multiple}}
+        pattern={{pattern}}
+        spellcheck={{spellcheck}}
+        step={{step}}
+        tabindex={{tabindex}}
+        class={{or inputClass "form-control"}}>
   {{/if}}
 {{/lf-input-wrapper}}

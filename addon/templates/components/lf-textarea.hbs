@@ -6,25 +6,21 @@
   errorMessagesComponent=errorMessagesComponent
   showErrorMessages=showErrorMessages
 }}
-  {{one-way-textarea
+  <textarea
     id=id
-    value=property
-    class=(or inputClass 'form-control')
-    update=(action "valueChanged")
-    rows=rows
-    placeholder=placeholder
-    disabled=disabled
-    readonly=readonly
-    autocomplete=autocomplete
-    autofocus=autofocus
-    cols=cols
-    maxlength=maxlength
-    minlength=minlength
-    selectionDirection=selectionDirection
-    selectionEnd=selectionEnd
-    selectionStart=selectionStart
-    spellcheck=spellcheck
-    tabindex=tabindex
-    wrap=wrap
-  }}
+    value={{property}}
+    class={{or inputClass 'form-control'}}
+    oninput={{action "valueChanged" value="target.value"}}
+    rows={{rows}}
+    placeholder={{placeholder}}
+    disabled={{disabled}}
+    readonly={{readonly}}
+    autocomplete={{autocomplete}}
+    autofocus={{autofocus}}
+    cols={{cols}}
+    maxlength={{maxlength}}
+    minlength={{minlength}}
+    spellcheck={{spellcheck}}
+    tabindex={{tabindex}}
+    wrap={{wrap}}></textarea>
 {{/lf-input-wrapper}}
