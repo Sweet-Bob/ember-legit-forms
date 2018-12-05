@@ -1,5 +1,4 @@
 import Ember from 'ember';
-import { isArray } from 'lodash/lang';
 
 const { get, getWithDefault, isEmpty, setProperties } = Ember;
 
@@ -30,7 +29,7 @@ export default class {
     });
     return {
       isValid,
-      messages: isArray(validationErrors) ? validationErrors : [validationErrors],
+      messages: _.isArray(validationErrors) ? validationErrors : [validationErrors],
     };
   }
 }
